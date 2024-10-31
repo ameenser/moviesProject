@@ -1,0 +1,150 @@
+/* Reset some basic elements */
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Light background for contrast */
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto; /* Center the wrapper */
+    padding: 20px;
+    background-color: #fff; /* Keep wrapper background white */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center; /* Center the header */
+}
+
+/* Movie list styles */
+.movie-list {
+    display: flex; /* Use flexbox for a horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Padding for better spacing */
+    gap: 20px; /* Space between movie items */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.movie-item {
+    background-color: #eaeaea; /* Light gray background for movie items */
+    border-radius: 5px;
+    padding: 15px;
+    min-width: 150px; /* Minimum width for each item */
+    text-align: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s; /* Transition for background change */
+}
+
+.movie-item img {
+    max-width: 100%; /* Ensure the image fits within the item */
+    border-radius: 5px; /* Match border radius of the item */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.movie-item:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    background-color: #d9d9d9; /* Change background color on hover */
+}
+
+.movie-item h2 {
+    font-size: 1.5rem;
+    color: #000; /* Black color for titles */
+}
+
+.movie-item p {
+    font-size: 1rem;
+    color: #333; /* Dark gray for descriptions for better readability */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #666; /* Footer color */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .movie-list {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items */
+    }
+
+    .movie-item {
+        min-width: 90%; /* Make items wider on small screens */
+    }
+}
+.movie-list {
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Padding for better spacing */
+    gap: 20px; /* Space between movie items */
+    justify-content: flex-start; /* Align items to the left */
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+}
+
+.movie-list {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between movie items */
+    padding: 20px; /* Padding around the grid container */
+    width: 100%; /* Full width of the page */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.movie-item {
+    text-align: center; /* Center the images */
+}
+
+/* Optional: To ensure images are not too large */
+.movie-item img {
+    max-width: 100%; /* Make sure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    background-color: #ffa200; /* Navbar background color */
+    padding: 10px 20px; /* Padding for the navbar */
+}
+
+.navbar a {
+    color: rgb(8, 8, 8); /* Text color for links */
+    text-decoration: none; /* Remove underline */
+    margin-right: 20px; /* Space between links */
+    padding: 10px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    background-color: #f58b0a; /* Darker shade on hover */
+}
+
+/* Updated styles for logout button */
+.logout-button {
+    background: none; /* Remove default button styling */
+    border: none; /* Remove border */
+    color: rgb(8, 8, 8); /* Match text color of links */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px; /* Add padding to match links */
+    border-radius: 5px; /* Rounded corners for consistency */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.logout-button:hover {
+    background-color: #f58b0a; /* Match hover effect of links */
+    color: rgb(0, 0, 0); /* Change text color on hover for contrast */
+}

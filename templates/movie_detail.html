@@ -1,0 +1,30 @@
+{%extends 'base_layout.html'%}
+{%block content%}
+<div class="movies-detail">
+    <div class = "movie">
+        <h1>{{movie.title}}</h1>
+        <img src="{{ movie.thumb.url }}" width="200">
+        <p>{{movie.body}}</p>
+        <p>{{movie.date}}</p>
+    </div>
+</div>
+<h2>Comments</h2>
+<div class="comments">
+    {% for comment in comments %}
+        <div class="comment">
+            <strong>{{ comment.user.username }}</strong>: {{ comment.text }}
+            <p><em>{{ comment.created_at }}</em></p>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+</div>
+<h3>Add a Comment</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Comment</button>
+</form>
+<p>You must be <a href="{% url 'accounts:login' %}">logged in</a> to leave a comment.</p>
+
+{%endblock%}

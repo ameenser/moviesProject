@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies List</title>
+    <link rel = "stylesheet" href="{% static 'styles.css'%}">
+</head>
+<body>
+    <header>
+        <h1>Movie App</h1>
+        <nav class="navbar">
+            <a href="{% url 'movies:list' %}">Home</a>  <!-- Home button -->
+            <a href="{% url 'accounts:signup' %}">SignUp</a>
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}!</span> <!-- Display username -->
+                <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'accounts:login' %}">Login</a>
+            {% endif %}        
+        </nav>
+    </header>
+    <div class = "wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
